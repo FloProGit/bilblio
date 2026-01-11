@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title',255);
             $table->mediumInteger('volume_number');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('serie_id');

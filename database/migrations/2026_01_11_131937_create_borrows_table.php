@@ -21,7 +21,7 @@ return new class extends Migration
             $table->bigInteger('contact_id')->unsigned();
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
             $table->date('borrow_at');
-            $table->date('returned_at');
+            $table->date('returned_at')->nullable();
             $table->date('expected_returned_date')->nullable();
             $table->string('notes')->nullable();
             $table->string('borrow_item_title');
